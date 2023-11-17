@@ -1,5 +1,14 @@
-<h1>Welcome to SvelteKit</h1>
-<p>
-	Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a>
-	 to read the documentation
-</p>
+<script lang="ts">
+	import { data } from "$lib/data.svelte"
+	import Develop from "$lib/components/Develop.svelte"
+</script>
+
+<div class="box">
+	<Develop />
+</div>
+<div class="box">
+	<Develop />
+</div>
+<div class="box">
+	<Develop />
+</div>
