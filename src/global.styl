@@ -1,5 +1,5 @@
 :root
-	background #1
+	@apply bg-neutral-950
 	color white
 
 body
@@ -9,13 +9,21 @@ body
 	flex-direction column
 	height 100vh
 	flex 1 0 auto
-	box-sizing border-box
 
 *
+	box-sizing border-box
 	font-family sans-serif
 
 .box
-	background #2
+	@apply bg-neutral-800 border border-solid border-neutral-700
 	padding 0.75rem
 	border-radius 0.5rem
-	width 12rem
+	width 18rem
+
+input
+	@apply border-none outline-none text-base
+
+button
+	transition all 0.2s ease-in-out
+	cursor pointer
+	border none

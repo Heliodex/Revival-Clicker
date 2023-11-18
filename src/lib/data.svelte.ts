@@ -1,14 +1,16 @@
-function createData() {
-	let development = $state(0)
+import { writable } from "svelte/store"
 
-	return {
-		get development() {
-			return development
-		},
-		set development(v) {
-			development = v
-		},
-	}
-}
-
-export const data = createData()
+export const data = writable({
+	development: 0,
+	stage: "name",
+	name: "",
+	stack: "",
+	started: {
+		development: false,
+		upgrading: false,
+	},
+	devUpgrades: {
+		pc: 0,
+		skill: 0,
+	},
+})
