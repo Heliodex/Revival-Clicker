@@ -3,36 +3,34 @@
 
 	let upgrades = [
 		{
-			id: "pc",
-			name: "upgrade pc",
+			name: "pc",
 			desc: "upgrade your pc to develop faster",
-			costs: (lvl: number) => Math.ceil(1.22 ** (lvl * 2)),
-			maxLevel: 26,
+			costs: (lvl: number) => Math.ceil(1.25 ** (lvl * 2) * 4),
+			maxLevel: 27,
 			onPurchase: () => $data.devUpgrades.pc++,
 		},
 		{
-			id: "skill",
-			name: "upgrade skill",
+			name: "skill",
 			desc: "upgrade your skill to earn more development per click",
-			costs: (lvl: number) => Math.floor(2.1 ** (lvl + 4)),
+			costs: (lvl: number) => Math.floor(2.2 ** (lvl + 4) * 4),
 			maxLevel: 9,
 			onPurchase: () => $data.devUpgrades.skill++,
 		},
 	] as const
 </script>
 
-{#each upgrades.filter(u => $data.devUpgrades[u.id] < u.maxLevel) as upgrade}
-	{@const cost = upgrade.costs($data.devUpgrades[upgrade.id])}
+{#each upgrades.filter(u => $data.devUpgrades[u.name] < u.maxLevel) as upgrade}
+	{@const cost = upgrade.costs($data.devUpgrades[upgrade.name])}
 	<div class="rounded-2 mb-2 bg-neutral-900 p-2">
-		<ins class="block">{upgrade.name}</ins>
+		<ins class="block">upgrade {upgrade.name}</ins>
 		<small class="block pb-2">
 			{upgrade.desc}
 		</small>
 
 		<button
 			on:click={() => {
-				// if ($data.development < cost) return
-				// $data.development -= cost
+				if ($data.development < cost) return
+				$data.development -= cost
 				$data.started.upgrading = true
 				upgrade.onPurchase()
 			}}

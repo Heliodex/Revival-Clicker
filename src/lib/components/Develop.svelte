@@ -4,6 +4,7 @@
 
 	const pcs = [
 		"potato",
+		"pocket calculator",
 		"2010 samsung tablet",
 		"amd phenom ii pc found in a skip",
 		"gran's intel celeron lap top",
@@ -47,11 +48,11 @@
 	let duration = $derived(
 		Math.floor(
 			111 +
-				($data.devUpgrades.pc ** 2 + 1) ** -1 * 2500 -
+				($data.devUpgrades.pc ** 2 + 3) ** -1 * 9500 -
 				4 * $data.devUpgrades.pc,
 		),
 	)
-	let amount = $derived(Math.floor(1 + $data.devUpgrades.skill ** 1.9))
+	let amount = $derived(1 + $data.devUpgrades.skill ** 1.9)
 	// increase progressBlur as duration decreases
 	let progressBlur = $derived((1 / duration) * 50)
 
@@ -86,7 +87,7 @@
 		progress = tweened(0, {
 			duration,
 		})
-		$progress = 100
+		if (duration > 20) $progress = 100
 
 		setTimeout(() => {
 			$data.development += amount
@@ -94,7 +95,6 @@
 			developing = false
 		}, duration)
 	}}>
-
 	<div class="px-3 py-2">develop</div>
 </button>
 

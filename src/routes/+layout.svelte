@@ -56,7 +56,7 @@
 	<div
 		class="rounded-4 absolute left-1/2 top-20 w-80 -translate-x-1/2
 		border border-solid border-neutral-700 bg-neutral-800 p-4">
-		choose a tech stack for your revival
+		choose a tech stack for {$data.name}
 
 		<div class="flex flex-col gap-3 pt-3">
 			{#each stacks as { name, colour, locked }}
@@ -92,7 +92,7 @@
 		<span class="text-yellow">{$data.name}</span>
 
 		{#if $data.started.development}
-			<span class="text-green">{$data.development} development</span>
+			<span class="text-green">{Math.floor($data.development)} development</span>
 		{/if}
 	</div>
 	<!-- Tile layout for boxes -->

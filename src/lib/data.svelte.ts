@@ -13,4 +13,5 @@ export const data = writable({
 		pc: 0,
 		skill: 0,
 	},
+	revivalUpgrades: [] as string[],
 })
