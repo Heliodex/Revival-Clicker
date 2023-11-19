@@ -1,32 +1,36 @@
 <script lang="ts">
-	import { data } from "$lib/data.svelte"
+	import { data } from "$lib/data"
 	import Develop from "$lib/components/Develop.svelte"
 	import DevUpgrades from "$lib/components/DevUpgrades.svelte"
 	import RevivalUpgrades from "$lib/components/RevivalUpgrades.svelte"
 </script>
 
-<div class="box">
+<fieldset>
+	<legend>development</legend>
 	<Develop />
-</div>
+</fieldset>
 
 {#if $data.started.development}
-	<div class="box">
+	<fieldset>
+		<legend>development upgrades</legend>
 		<DevUpgrades />
-	</div>
+	</fieldset>
 {/if}
 
-{#if $data.started.development}
-	<div class="box">
+{#if $data.started.upgrading}
+	<fieldset>
+		<legend>revival upgrades</legend>
 		<RevivalUpgrades />
-	</div>
+	</fieldset>
 {/if}
 
-<div class="box">
+<fieldset>
+	<legend>stuff</legend>
 	<button
-		on:click={() => {
+		onclick={() => {
 			localStorage.clear()
 			location.reload()
 		}}>
 		clear data
 	</button>
-</div>
+</fieldset>

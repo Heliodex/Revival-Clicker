@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { tweened } from "svelte/motion"
-	import { data } from "$lib/data.svelte"
+	import { data } from "$lib/data"
 
 	const pcs = [
 		"potato",
@@ -61,7 +61,7 @@
 </script>
 
 {#if $data.started.upgrading}
-	<div class="rounded-2 mb-2 bg-neutral-900 p-2">
+	<div class="rounded-2 mb-2 bg-neutral-800 p-2">
 		<div class="flex justify-between">
 			<strong class="pe-8">PC</strong>
 			<span>{pcs[$data.devUpgrades.pc]}</span>
@@ -80,7 +80,7 @@
 	style="--progress: {developing
 		? $progress * (1 + progressBlur * 2) - progressBlur
 		: 0}%; --blur: {progressBlur * 100}%"
-	on:mousedown={() => {
+	onmousedown={() => {
 		if (developing) return
 		developing = true
 

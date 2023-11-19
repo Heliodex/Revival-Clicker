@@ -11,14 +11,17 @@ body
 	flex 1 0 auto
 
 *
-	box-sizing border-box
+	@apply box-border
 	font-family sans-serif
 
-.box
-	@apply bg-neutral-800 border border-solid border-neutral-700
+fieldset
+	@apply border-2 border-solid border-neutral-700
 	padding 0.75rem
 	border-radius 0.5rem
 	width 18rem
+
+legend
+	@apply font-bold px-1.5
 
 input
 	@apply border-none outline-none text-base

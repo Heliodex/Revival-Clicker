@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { data } from "$lib/data.svelte"
+	import { data } from "$lib/data"
 
 	import "/src/global.styl"
 	import "uno.css"
@@ -33,7 +33,7 @@
 		border border-solid border-neutral-700 bg-neutral-800 p-4">
 		choose a name for your revival
 
-		<form on:submit={() => ($data.stage = "stack")} class="pt-3">
+		<form onsubmit={() => ($data.stage = "stack")} class="pt-3">
 			<input
 				required
 				minlength="3"
@@ -61,7 +61,7 @@
 		<div class="flex flex-col gap-3 pt-3">
 			{#each stacks as { name, colour, locked }}
 				<button
-					on:click={() => {
+					onclick={() => {
 						if (locked) return
 						$data.stack = name
 						$data.stage = "game"

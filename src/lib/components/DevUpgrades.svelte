@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { data } from "$lib/data.svelte"
+	import { data } from "$lib/data"
 
 	let upgrades = [
 		{
@@ -21,14 +21,14 @@
 
 {#each upgrades.filter(u => $data.devUpgrades[u.name] < u.maxLevel) as upgrade}
 	{@const cost = upgrade.costs($data.devUpgrades[upgrade.name])}
-	<div class="rounded-2 mb-2 bg-neutral-900 p-2">
+	<div class="rounded-2 mb-2 bg-neutral-800 p-2">
 		<ins class="block">upgrade {upgrade.name}</ins>
 		<small class="block pb-2">
 			{upgrade.desc}
 		</small>
 
 		<button
-			on:click={() => {
+			onclick={() => {
 				if ($data.development < cost) return
 				$data.development -= cost
 				$data.started.upgrading = true
