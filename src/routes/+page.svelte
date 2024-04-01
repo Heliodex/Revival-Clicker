@@ -17,7 +17,7 @@
 	</fieldset>
 {/if}
 
-{#if $data.started.upgrading}
+{#if $data.devUpgrades.pc > 2}
 	<fieldset>
 		<legend>revival upgrades</legend>
 		<RevivalUpgrades />

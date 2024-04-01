@@ -9,12 +9,25 @@ export const data = writable({
 	started: {
 		development: false,
 		upgrading: false,
+		messages: false,
 	},
 	devUpgrades: {
 		pc: 0,
 		skill: 0,
 		peripherals: false,
 	},
+	messages: [] as {
+		sender: string
+		message: string
+		type: "application"
+	}[],
+	unreadMessages: 0,
+	devs: [] as {
+		name: string
+		role: string
+		accepted: boolean
+	}[],
+
 	revivalUpgrades: [] as string[],
 })
 type Upgrade = [string, number, Upgrade[] | undefined]
@@ -49,4 +62,4 @@ export const filteredUpgrades = () =>
 	)
 
 export const revivalProgress = () =>
-	get(data).revivalUpgrades.length / upgrades.length * 100
+	(get(data).revivalUpgrades.length / upgrades.length) * 100

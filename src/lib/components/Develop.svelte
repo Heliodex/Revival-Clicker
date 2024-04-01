@@ -46,7 +46,7 @@
 		"technopathist",
 	]
 
-	let duration = $derived(5e4 / ($data.devUpgrades.pc ** 2 + 15))
+	let duration = $derived(3e4 / ($data.devUpgrades.pc ** 2 + 9))
 	let amount = $derived(1 + $data.devUpgrades.skill ** 1.9)
 	// increase progressBlur as duration decreases
 	let progressBlur = $derived((1 / duration) * 50)
