@@ -9,7 +9,8 @@
 		{ name: "asp.net", colour: [186, 114, 216], locked: true },
 		{ name: "php & laravel", colour: [243, 39, 47], locked: true },
 		{ name: "svelte & sveltekit", colour: [249, 53, 12], locked: true },
-		{ name: "react & next", colour: [47, 159, 201], locked: true },
+		{ name: "react & next", colour: [0, 0, 0], locked: true },
+		{ name: "python & django", colour: [49, 171, 118], locked: true },
 		{ name: "ruby & rails", colour: [206, 0, 8], locked: true },
 		{ name: "wix", colour: [255, 255, 255], locked: true },
 	]
@@ -75,7 +76,7 @@
 								(colour[0] + colour[1] + colour[2]) / 3 > 127
 									? "black"
 									: "white"
-						  }`}>
+							}`}>
 					{locked
 						? name
 								.split("")
@@ -92,7 +93,9 @@
 		<span class="text-yellow">{$data.name}</span>
 
 		{#if $data.started.development}
-			<span class="text-green">{Math.floor($data.development)} development</span>
+			<span class="text-green">
+				{Math.floor($data.development)} development
+			</span>
 		{/if}
 	</div>
 	<!-- Tile layout for boxes -->

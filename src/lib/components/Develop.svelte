@@ -3,7 +3,8 @@
 	import { data } from "$lib/data"
 
 	const pcs = [
-		"potato",
+		"none",
+		"potato (literal)",
 		"pocket calculator",
 		"2010 samsung tablet",
 		"amd phenom ii pc found in a skip",
@@ -11,14 +12,14 @@
 		"school-issued pentium chromebook",
 		"the upgraded dell inspiron you found on ebay",
 		"your dads old i5 thinkpad",
-		"an overclocked fx-8350 rig running at 110c",
+		"an overclocked fx-8350 rig running at 110°C",
 		"actually decent ryzen 3 1200g starter pc",
 		"a kaby lake i5 'gaming' pc from amazon",
 		"an i7-8700 computer with a faulty psu",
 		"the ryzen 7 3700x pc you got for christmas",
 		"water-cooled beast i9 rig you built yourself",
-		"triple-monitor 96-core threadripper 7995wx pc",
 		"a bare datacenter motherboard with dual xeons and 512gb ram",
+		"triple-monitor 96-core threadripper 7995wx pc",
 		"server rack with 4 epyc cpus and quad 3090s",
 		"ibm z15 mainframe with 200 cores and 40tb ram",
 		"d-wave quantum computer with 5000 qubits",
@@ -45,13 +46,7 @@
 		"technopathist",
 	]
 
-	let duration = $derived(
-		Math.floor(
-			111 +
-				($data.devUpgrades.pc ** 2 + 3) ** -1 * 9500 -
-				4 * $data.devUpgrades.pc,
-		),
-	)
+	let duration = $derived(5e4 / ($data.devUpgrades.pc ** 2 + 15))
 	let amount = $derived(1 + $data.devUpgrades.skill ** 1.9)
 	// increase progressBlur as duration decreases
 	let progressBlur = $derived((1 / duration) * 50)
@@ -74,8 +69,7 @@
 {/if}
 
 <button
-	class="rounded-1.5 w-full cursor-pointer bg-blue-500 text-lg
-	text-white duration-100 hover:bg-blue-600 disabled:bg-blue-500"
+	class="rounded-1.5 w-full cursor-pointer select-none bg-blue-500 text-lg text-white duration-100 hover:bg-blue-600 disabled:bg-blue-500"
 	disabled={developing}
 	style="--progress: {developing
 		? $progress * (1 + progressBlur * 2) - progressBlur
@@ -84,9 +78,7 @@
 		if (developing) return
 		developing = true
 
-		progress = tweened(0, {
-			duration,
-		})
+		progress = tweened(0, { duration })
 		if (duration > 20) $progress = 100
 
 		setTimeout(() => {

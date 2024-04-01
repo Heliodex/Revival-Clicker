@@ -1,0 +1,85 @@
+[
+	[
+		"begin site development",
+		50,
+		[
+			[
+				"user accounts",
+				150,
+				[
+					["user profiles", 100],
+					["user settings", 300],
+					["user status", 100],
+					["friends system", 400],
+					["followers system", 200],
+					["currency", 100, [["transactions", 300]]],
+					["user moderation", 400],
+					["trading systems", 700],
+					["private messages", 300],
+					["character customisation", 500],
+					["groups", 300]
+				]
+			],
+			[
+				"places",
+				200,
+				[
+					["place joining", 50],
+					["place settings", 200],
+					["place comments", 250]
+				]
+			],
+			["forum", 200, [["forum comments", 250]]],
+			[
+				"catalog",
+				250,
+				[
+					["image and decal uploads", 50],
+					["t-shirt uploads", 50],
+					["clothing uploads", 50],
+					["hat uploads", 50],
+					["gear uploads", 50],
+					["accessory uploads", 50],
+					["audio uploads", 50],
+					["asset comments", 50]
+				]
+			],
+			["site hosting", 300]
+		]
+	],
+	["get domain name", 50],
+	[
+		"acquire client",
+		50,
+		[
+			["create launcher", 300],
+			["patch client", 400, [["patch client vulnerabilities", 800]]],
+			["dll hooking", 800, [["anticheat system", 1500]]],
+			["acquire studio", 100, [["patch studio", 500]]],
+			["load fflags", 250],
+			[
+				"load corescripts",
+				200,
+				[["patch corescripts", 300, [["corescript optimisations",1000]]]]
+			],
+			["load assets", 300, [["load character appearance", 400]]],
+			["join script", 250],
+			["host script", 250]
+		]
+	],
+	[
+		"acquire rccservice",
+		200,
+		[
+			["clothing rendering", 200],
+			["hat rendering", 500],
+			["gear rendering", 500],
+			["accessory rendering", 500],
+			["model rendering", 500],
+			["mesh rendering", 300],
+			["character rendering", 200],
+			["job viewing", 150],
+			["place hosting", 1000]
+		]
+	]
+]
