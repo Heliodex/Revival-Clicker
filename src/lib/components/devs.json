@@ -3,7 +3,7 @@
 		"name": "Heliodex",
 		"username": "heliodex",
 		"skills": ["node.js", "svelte & sveltekit", "htmx & go", "wix"],
-		"skillNames": ["Svelte", "SvelteKit", "Node.JS", "Wix", "HTMX & Go"]
+		"skillNames": ["Svelte", "SvelteKit", "Node.JS", "Wix", "Go"]
 	},
 	{
 		"name": "Taskmanager",
@@ -98,8 +98,8 @@
 	{
 		"name": "alonso",
 		"username": "SimplyAlonso",
-		"skills": [],
-		"skillNames": ["web"]
+		"skills": ["php"],
+		"skillNames": ["PHP"]
 	},
 	{
 		"name": "BrentDaMage",
@@ -118,5 +118,17 @@
 		"username": "theofficial608",
 		"skills": ["php"],
 		"skillNames": ["PHP"]
+	},
+	{
+		"name": "Ahead",
+		"username": "ahe4d",
+		"skills": ["php", "php & laravel", "node.js"],
+		"skillNames": ["PHP", "Laravel", "Node.JS"]
+	},
+	{
+		"name": "Aep",
+		"username": "6aep",
+		"skills": ["asp.net"],
+		"skillNames": ["ASP.NET"]
 	}
 ]
