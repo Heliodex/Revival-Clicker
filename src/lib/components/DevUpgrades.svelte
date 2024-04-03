@@ -5,7 +5,7 @@
 		{
 			name: "pc",
 			desc: "upgrade your pc to develop faster",
-			costs: (lvl: number) => Math.ceil(1.25 ** (lvl * 2) * 4),
+			costs: (lvl: number) => Math.ceil(1.25 ** (lvl * 2) + 3),
 			requires: () => true,
 			maxLevel: 28,
 			onPurchase: () => $data.devUpgrades.pc++,
@@ -13,7 +13,7 @@
 		{
 			name: "skill",
 			desc: "upgrade your skill to earn more development per click",
-			costs: (lvl: number) => Math.floor(2.2 ** (lvl + 4) * 4),
+			costs: (lvl: number) => Math.floor(2.1 ** (lvl + 4) * 4),
 			requires: () => $data.devUpgrades.pc > 1,
 			maxLevel: 9,
 			onPurchase: () => $data.devUpgrades.skill++,
@@ -39,8 +39,8 @@
 				}}
 				class="block rounded px-2 py-1 text-white {cost >
 				$data.development
-					? 'bg-red-500'
-					: 'bg-green-500 hover:bg-green-600 active:bg-green-700'}">
+					? 'bg-red-5'
+					: 'bg-green-5 hover:bg-green-6 active:bg-green-7'}">
 				{cost} dev
 			</button>
 		</div>

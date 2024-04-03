@@ -46,7 +46,7 @@
 		"technopathist",
 	]
 
-	let duration = $derived(3e4 / ($data.devUpgrades.pc ** 2 + 9))
+	let duration = $derived(3e4 / ($data.devUpgrades.pc ** 2.2 + 9))
 	let amount = $derived(1 + $data.devUpgrades.skill ** 1.9)
 	// increase progressBlur as duration decreases
 	let progressBlur = $derived((1 / duration) * 50)
@@ -56,7 +56,7 @@
 </script>
 
 {#if $data.started.upgrading}
-	<div class="rounded-2 mb-2 bg-neutral-800 p-2">
+	<div class="rounded-2 mb-2 bg-neutral-8 p-2">
 		<div class="flex justify-between">
 			<strong class="pe-8">PC</strong>
 			<span>{pcs[$data.devUpgrades.pc]}</span>
@@ -69,7 +69,7 @@
 {/if}
 
 <button
-	class="rounded-1.5 w-full cursor-pointer select-none bg-blue-500 text-lg text-white duration-100 hover:bg-blue-600 disabled:bg-blue-500"
+	class="rounded-1.5 w-full cursor-pointer select-none bg-blue-5 text-lg text-white duration-100 hover:bg-blue-6 disabled:bg-blue-5"
 	disabled={developing}
 	style="--progress: {developing
 		? $progress * (1 + progressBlur * 2) - progressBlur
