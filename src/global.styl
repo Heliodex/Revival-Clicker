@@ -37,3 +37,24 @@ button
 
 hr
 	@apply border-1 border-solid border-neutral-6
+
+::-webkit-scrollbar
+	width 0.8rem
+	height 0.8rem
+	// overlay scrollbar
+	overflow overlay
+
+	&-track
+	&-corner
+		@apply bg-neutral-950
+
+	&-thumb
+		@apply bg-neutral-8 border-solid border-neutral-950
+		border-radius 1rem
+		border-width 0.15rem
+		width 0.5rem
+
+		&:hover
+			@apply bg-neutral-6
+		&:active
+			@apply bg-neutral-7

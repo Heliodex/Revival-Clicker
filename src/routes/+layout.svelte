@@ -254,12 +254,10 @@
 	</div>
 	<!-- Tile layout for boxes -->
 	<main
-		class="flex flex-col flex-wrap content-start justify-start gap-4 overflow-hidden pt-4">
+		class="flex flex-col flex-wrap content-start justify-start gap-4 overflow-y-hidden pt-4">
 		<slot />
 		{#if messagesOpen}
-			<div transition:fade={{ duration: 200 }}>
-				<Messages close={() => (messagesOpen = false)} />
-			</div>
+			<Messages close={() => (messagesOpen = false)} />
 		{/if}
 	</main>
 {/if}

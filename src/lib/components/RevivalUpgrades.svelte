@@ -21,10 +21,11 @@
 	</div>
 </div>
 
-<div class="max-h-80vh flex flex-col gap-2 overflow-y-auto pt-2">
-	{#each filtered as upgrade (upgrade.name)}
-		<div transition:fade>
+<div class="pt-2">
+	<div class="max-h-75vh flex flex-col gap-2 overflow-y-auto">
+		{#each filtered as upgrade (upgrade.name)}
 			<div
+				transition:fade
 				class="rounded-2 flex flex-wrap justify-between bg-neutral-8 p-2">
 				<span class="pb-2">{upgrade.name}</span>
 				<!-- <small class="block pb-2">
@@ -45,6 +46,6 @@
 					{upgrade.cost} dev
 				</button>
 			</div>
-		</div>
-	{/each}
+		{/each}
+	</div>
 </div>

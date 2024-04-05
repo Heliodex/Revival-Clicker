@@ -28,6 +28,7 @@ export const data = writable({
 	devs: [] as {
 		name: string
 		username: string
+		role: string
 	}[],
 	revivalUpgrades: [] as string[],
 })
