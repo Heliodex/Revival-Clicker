@@ -1,5 +1,19 @@
 <script lang="ts">
 	import { data } from "$lib/data"
+
+	$effect(() => {
+		const intervals: number[] = []
+		for (const dev of $data.devs) {
+			const interval = setInterval(() => {
+				$data.development += 0.02
+			}, 100)
+			
+			intervals.push(interval)
+		}
+		return () => {
+			for (const interval of intervals) clearInterval(interval)
+		}
+	})
 </script>
 
 <div class="flex flex-col gap-3">
@@ -13,6 +27,9 @@
 				<b>{dev.name}</b>
 				<div class="text-neutral-4 pt-1">
 					{dev.role}
+				</div>
+				<div class="text-green pt-1">
+					(+0.2 dev/sec)
 				</div>
 			</div>
 		</div>

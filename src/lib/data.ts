@@ -1,7 +1,7 @@
 import { get, writable } from "svelte/store"
-import upg from "./components/upgrades.json"
+import upg from "./upgrades"
 import message from "./message"
-import allDevs from "./components/devs.json"
+import allDevs from "./devs"
 
 export const data = writable({
 	development: 0,
@@ -32,7 +32,6 @@ export const data = writable({
 	}[],
 	revivalUpgrades: [] as string[],
 })
-type Upgrade = [string, number, Upgrade[] | undefined]
 
 const upgrades: {
 	name: string
@@ -40,17 +39,16 @@ const upgrades: {
 	dependsOn?: string[]
 }[] = []
 // Having upgrades in arrays instead of objects makes it easier to write
-const parseUpgrade = (upgrade: Upgrade, parentName?: string) => {
-	const [name, cost, children] = upgrade
+function parseUpgrade(upgrade: (typeof upg)[number], parentName?: string) {
+	const [name, cost, dependsOn] = upgrade
 	upgrades.push({
 		name,
 		cost,
-		...(parentName && { dependsOn: [parentName] }),
+		...(dependsOn.length > 0 ? { dependsOn } : {}),
 	})
-	for (const child of children || []) parseUpgrade(child, name)
 }
 
-for (const upgrade of upg) parseUpgrade(upgrade as Upgrade)
+for (const upgrade of upg) parseUpgrade(upgrade)
 
 export const filteredUpgrades = () =>
 	upgrades.filter(
@@ -65,22 +63,23 @@ export const revivalProgress = () =>
 	(get(data).revivalUpgrades.length / upgrades.length) * 100
 
 const requirements = [
+	() => revivalProgress() >= 1,
 	() => revivalProgress() >= 5,
-	() => revivalProgress() >= 50,
 	() => revivalProgress() >= 100,
 	() => false,
 ]
 
+const rand = () => (Math.random() + 0.2) * 1e4
+
 // message handling
 function messages() {
-	console.log("checking")
-	setTimeout(messages, (Math.random() + 0.2) * 1e5)
+	console.log("checking", revivalProgress())
+	setTimeout(messages, rand())
 	const cdata = get(data)
 	const unacceptedDevs = cdata.messages.filter(
 		m => m.type === "application" && !m.hired
 	)
 	if (unacceptedDevs.length > 0) return
-
 	if (!requirements[cdata.devs.length]()) return
 
 	// pick a random dev
@@ -93,7 +92,11 @@ function messages() {
 	let devsMatchingStack = remainingDevs.filter(d =>
 		d.skills.includes(cdata.stack)
 	)
-	if (devsMatchingStack.length === 0) devsMatchingStack = remainingDevs
+	if (devsMatchingStack.length === 0) {
+		console.log("no devs matching stack", cdata.stack)
+		if (Math.random() > 0.2) return
+		devsMatchingStack = remainingDevs
+	}
 
 	const dev =
 		devsMatchingStack[Math.floor(Math.random() * devsMatchingStack.length)]
@@ -105,4 +108,4 @@ function messages() {
 	// }
 }
 
-setTimeout(messages, (Math.random() + 0.2) * 1e5)
+setTimeout(messages, rand())
