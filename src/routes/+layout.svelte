@@ -141,8 +141,8 @@
 
 			{#if $data.started.development}
 				<span class="text-green">
-					<abbr title="{$data.development} development">
-						{Math.floor($data.development)}
+					<abbr title="{$data.development}/{$data.maxDevelopment}">
+						{Math.floor($data.development)}/{Math.floor($data.maxDevelopment)}
 					</abbr>
 					development
 				</span>

@@ -34,7 +34,7 @@
 	</fieldset>
 {/if}
 
-{#if $data.devUpgrades.pc > 4}
+{#if $data.devUpgrades.storage > 3}
 	<fieldset>
 		<legend>
 			Revival upgrades

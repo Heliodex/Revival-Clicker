@@ -5,6 +5,7 @@ import allDevs from "./devs"
 
 export const data = writable({
 	development: 0,
+	maxDevelopment: 0,
 	stage: "name",
 	name: "",
 	stack: "",
@@ -15,7 +16,7 @@ export const data = writable({
 	devUpgrades: {
 		pc: 0,
 		skill: 0,
-		peripherals: false,
+		storage: 0,
 	},
 	messages: [] as {
 		sender: { name: string; username: string }
@@ -31,6 +32,14 @@ export const data = writable({
 		role: string
 	}[],
 	revivalUpgrades: [] as string[],
+})
+
+data.subscribe(d => {
+	const maxDevelopment = (d.devUpgrades.storage * 10 + 6.31) ** 2.1
+
+	d.maxDevelopment = maxDevelopment
+	if (d.development > maxDevelopment) d.development = maxDevelopment
+	return d
 })
 
 const upgrades: {

@@ -8,7 +8,7 @@
 			costs: (lvl: number) => Math.ceil(1.25 ** (lvl * 2) + 3),
 			requires: () => true,
 			maxLevel: 28,
-			onPurchase: () => $data.devUpgrades.pc++,
+			onPurchase: () => $data.devUpgrades.pc++
 		},
 		{
 			name: "skill",
@@ -16,8 +16,18 @@
 			costs: (lvl: number) => Math.floor(2.1 ** (lvl + 4) * 4),
 			requires: () => $data.devUpgrades.pc > 1,
 			maxLevel: 9,
-			onPurchase: () => $data.devUpgrades.skill++,
+			onPurchase: () => $data.devUpgrades.skill++
 		},
+		{
+			name: "storage",
+			desc: "upgrade your storage to store more development",
+			// if this is ever greater than max development, the game would be impossible
+			costs: (lvl: number) =>
+				Math.floor(((lvl - 0.01) * 10 + 6.31) ** 2.1),
+			requires: () => $data.devUpgrades.skill > 0,
+			maxLevel: 99,
+			onPurchase: () => $data.devUpgrades.storage++
+		}
 	] as const
 </script>
 
@@ -38,9 +48,11 @@
 					upgrade.onPurchase()
 				}}
 				class="block rounded px-2 py-1 text-white {cost >
-				$data.development
+				$data.maxDevelopment
 					? 'bg-red-5'
-					: 'bg-green-5 hover:bg-green-6 active:bg-green-7'}">
+					: cost > $data.development
+						? 'bg-neutral-5'
+						: 'bg-green-5 hover:bg-green-6 active:bg-green-7'}">
 				{cost} dev
 			</button>
 		</div>
