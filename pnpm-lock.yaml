@@ -9,7 +9,7 @@ importers:
   .:
     devDependencies:
       '@biomejs/biome':
-        specifier: ^1.7.2
+        specifier: ^1.8.2
         version: 1.8.2
       '@sveltejs/adapter-static':
         specifier: ^3.0.1
@@ -30,7 +30,7 @@ importers:
         specifier: ^5.55.7
         version: 5.55.7
       svelte-check:
-        specifier: ^3.7.1
+        specifier: ^3.8.1
         version: 3.8.1(@babel/core@7.24.4)(postcss@8.5.9)(stylus@0.63.0)(svelte@5.55.7)
       svelte-preprocess:
         specifier: ^5.1.4
@@ -39,7 +39,7 @@ importers:
         specifier: ^2.6.2
         version: 2.6.2
       typescript:
-        specifier: ^5.4.5
+        specifier: ^5.5.2
         version: 5.5.2
       unocss:
         specifier: ^0.59.4
@@ -862,8 +862,8 @@ packages:
     resolution: {integrity: sha512-3sUqbMEc77XqpdNO7FRyRog+eW3ph+GYCbj+rK+uYyRMuwsVy0rMiVtPn+QJlKFvWP/1PYpapqYn0Me2knFn+A==}
     engines: {node: '>=0.10.0'}
 
-  defu@6.1.4:
-    resolution: {integrity: sha512-mEQCMmwJu317oSz8CwdIOdwf3xMif1ttiM8LTufzc3g6kR+9Pe236twL8j3IYT1F7GfRgGcW6MWxzZjLIkuHIg==}
+  defu@6.1.7:
+    resolution: {integrity: sha512-7z22QmUWiQ/2d0KkdYmANbRUVABpZ9SNYyH5vx6PZ+nE5bcC0l7uFvEfHlyld/HcGBFTL536ClDt3DEcSlEJAQ==}
 
   destr@2.0.3:
     resolution: {integrity: sha512-2N3BOUU4gYMpTP24s5rF5iP7BDr7uNTCs4ozw3kf/eKfvWSIu93GEBi5m427YoyJoeOzQ5smuu4nNAPGb8idSQ==}
@@ -2242,7 +2242,7 @@ snapshots:
 
   deepmerge@4.3.1: {}
 
-  defu@6.1.4: {}
+  defu@6.1.7: {}
 
   destr@2.0.3: {}
 
@@ -2749,7 +2749,7 @@ snapshots:
   unconfig@0.3.13:
     dependencies:
       '@antfu/utils': 0.7.7
-      defu: 6.1.4
+      defu: 6.1.7
       jiti: 1.21.0
 
   unocss@0.59.4(postcss@8.5.9)(rollup@4.60.1)(vite@6.4.2(jiti@1.21.0)(stylus@0.63.0)):
