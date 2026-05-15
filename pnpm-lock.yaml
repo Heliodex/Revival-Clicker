@@ -9,7 +9,7 @@ importers:
   .:
     devDependencies:
       '@biomejs/biome':
-        specifier: ^1.8.2
+        specifier: ^1.7.2
         version: 1.8.2
       '@sveltejs/adapter-static':
         specifier: ^3.0.1
@@ -30,7 +30,7 @@ importers:
         specifier: ^5.55.7
         version: 5.55.7
       svelte-check:
-        specifier: ^3.8.1
+        specifier: ^3.7.1
         version: 3.8.1(@babel/core@7.24.4)(postcss@8.5.9)(stylus@0.63.0)(svelte@5.55.7)
       svelte-preprocess:
         specifier: ^5.1.4
@@ -39,7 +39,7 @@ importers:
         specifier: ^2.6.2
         version: 2.6.2
       typescript:
-        specifier: ^5.5.2
+        specifier: ^5.4.5
         version: 5.5.2
       unocss:
         specifier: ^0.59.4
@@ -439,9 +439,6 @@ packages:
 
   '@jridgewell/sourcemap-codec@1.5.5':
     resolution: {integrity: sha512-cYQ9310grqxueWbl+WuIUIaiUaDcj7WOq5fVhEljNVgRfOUhY9fy2zTvfoqWsnebh8Sl70VScFbICvJnLKB0Og==}
-
-  '@jridgewell/trace-mapping@0.3.25':
-    resolution: {integrity: sha512-vNk6aEwybGtawWmy/PzwnGDOjCkLWSD2wqvjGGAgOAwCGWySYXfYoxt00IJkTF+8Lb57DwOb3Aa0o9CApepiYQ==}
 
   '@jridgewell/trace-mapping@0.3.31':
     resolution: {integrity: sha512-zzNR+SdQSDJzc8joaeP8QQoCQr8NuYx2dIIytl1QeBEZHJ9uW6hebsrYgbz8hJwUQao3TWCMtmfV8Nu1twOLAw==}
@@ -1175,9 +1172,6 @@ packages:
   perfect-debounce@1.0.0:
     resolution: {integrity: sha512-xCy9V055GLEqoFaHoC1SoLIaLmWctgCUaBaWxDZ7/Zx4CTyX7cJQLJOok/orfjZAh9kEYpjJa4d0KcJmCbctZA==}
 
-  picocolors@1.0.0:
-    resolution: {integrity: sha512-1fygroTLlHu66zi26VoTDv8yRgm0Fccecssto+MhsZ0D/DGW2sm8E8AjW7NU5VVTRt5GxbeZ5qBuJr+HyLYkjQ==}
-
   picocolors@1.1.1:
     resolution: {integrity: sha512-xceH2snhtb5M9liqDsmEw56le376mTZkEX/jEb/RxNFyegNul7eNslCXP9FDj/Lcu0X8KEyMceP2ntpaHrDEVA==}
 
@@ -1813,11 +1807,6 @@ snapshots:
   '@jridgewell/resolve-uri@3.1.2': {}
 
   '@jridgewell/sourcemap-codec@1.5.5': {}
-
-  '@jridgewell/trace-mapping@0.3.25':
-    dependencies:
-      '@jridgewell/resolve-uri': 3.1.2
-      '@jridgewell/sourcemap-codec': 1.5.5
 
   '@jridgewell/trace-mapping@0.3.31':
     dependencies:
@@ -2522,8 +2511,6 @@ snapshots:
 
   perfect-debounce@1.0.0: {}
 
-  picocolors@1.0.0: {}
-
   picocolors@1.1.1: {}
 
   picomatch@2.3.2: {}
@@ -2663,11 +2650,11 @@ snapshots:
 
   svelte-check@3.8.1(@babel/core@7.24.4)(postcss@8.5.9)(stylus@0.63.0)(svelte@5.55.7):
     dependencies:
-      '@jridgewell/trace-mapping': 0.3.25
+      '@jridgewell/trace-mapping': 0.3.31
       chokidar: 3.6.0
       fast-glob: 3.3.2
       import-fresh: 3.3.0
-      picocolors: 1.0.0
+      picocolors: 1.1.1
       sade: 1.8.1
       svelte: 5.55.7
       svelte-preprocess: 5.1.4(@babel/core@7.24.4)(postcss@8.5.9)(stylus@0.63.0)(svelte@5.55.7)(typescript@5.5.2)
