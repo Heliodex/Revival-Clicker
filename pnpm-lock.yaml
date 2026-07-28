@@ -13,10 +13,10 @@ importers:
         version: 1.8.2
       '@sveltejs/adapter-static':
         specifier: ^3.0.1
-        version: 3.0.1(@sveltejs/kit@2.60.1(@sveltejs/vite-plugin-svelte@3.0.2(svelte@5.55.7)(vite@6.4.3(jiti@1.21.0)(stylus@0.63.0)))(svelte@5.55.7)(typescript@5.5.2)(vite@6.4.3(jiti@1.21.0)(stylus@0.63.0)))
+        version: 3.0.1(@sveltejs/kit@2.69.1(@sveltejs/vite-plugin-svelte@3.0.2(svelte@5.55.7)(vite@6.4.3(jiti@1.21.0)(stylus@0.63.0)))(svelte@5.55.7)(typescript@5.5.2)(vite@6.4.3(jiti@1.21.0)(stylus@0.63.0)))
       '@sveltejs/kit':
-        specifier: ^2.60.1
-        version: 2.60.1(@sveltejs/vite-plugin-svelte@3.0.2(svelte@5.55.7)(vite@6.4.3(jiti@1.21.0)(stylus@0.63.0)))(svelte@5.55.7)(typescript@5.5.2)(vite@6.4.3(jiti@1.21.0)(stylus@0.63.0))
+        specifier: ^2.69.1
+        version: 2.69.1(@sveltejs/vite-plugin-svelte@3.0.2(svelte@5.55.7)(vite@6.4.3(jiti@1.21.0)(stylus@0.63.0)))(svelte@5.55.7)(typescript@5.5.2)(vite@6.4.3(jiti@1.21.0)(stylus@0.63.0))
       '@unocss/extractor-svelte':
         specifier: ^0.59.4
         version: 0.59.4
@@ -612,8 +612,8 @@ packages:
   '@standard-schema/spec@1.1.0':
     resolution: {integrity: sha512-l2aFy5jALhniG5HgqrD6jXLi/rUWrKvqN/qJx6yoJsgKhblVd+iqqU4RCXavm/jPityDo5TCvKMnpjKnOriy0w==}
 
-  '@sveltejs/acorn-typescript@1.0.10':
-    resolution: {integrity: sha512-4WfKk68eTih+MiJD4fSbxN7E8kVBmTMPWHUPYjvl2N0rMs53YLTT8/YjKU5Dtnz5LqDjl7LEw4U7lXR2W3J5WA==}
+  '@sveltejs/acorn-typescript@1.0.11':
+    resolution: {integrity: sha512-LFuZUkjJ9iF7JZye/aG5XM0SFcQ5VyL0oVX4WJ9dc0Va3R3s0OauX1BESVCb+YN/ol8TAfqGDDAQsTG627Y5kw==}
     peerDependencies:
       acorn: ^8.9.0
 
@@ -627,8 +627,8 @@ packages:
     peerDependencies:
       '@sveltejs/kit': ^2.0.0
 
-  '@sveltejs/kit@2.60.1':
-    resolution: {integrity: sha512-mQjlkNo+rJvpln7V2IGY2j99BqhcFbS4UN0AQNKNYfhBAFZTuCDAdW3a1sgf330mvtNvsBXn3HpAhcmvdJTcIQ==}
+  '@sveltejs/kit@2.69.1':
+    resolution: {integrity: sha512-+nz8Fx/cElzb2ZPHC+6Ll3y3NEVIe4Na75PeplLlyTmd1dBXAjz2KR14y1ZgNjb2ThfAYzulu+PFy1UE3RCUzA==}
     engines: {node: '>=18.13'}
     hasBin: true
     peerDependencies:
@@ -764,6 +764,11 @@ packages:
     engines: {node: '>=0.4.0'}
     hasBin: true
 
+  acorn@8.18.0:
+    resolution: {integrity: sha512-lGq+9yr1/GuAWaVYIHRjvvySG5/4VfKIvC8EWxStPdcDh/Ka7FG3twP6v4d5BkravUilhIAsG4Qj83t02LWUPQ==}
+    engines: {node: '>=0.4.0'}
+    hasBin: true
+
   ansi-styles@3.2.1:
     resolution: {integrity: sha512-VT0ZI6kZRdTh8YyJw3SMbYm/u+NqfsAxEpWO0Pf9sq8/e94WxxOpPKx9FR1FlyCtOVDNOQ+8ntlqFxiRc+r5qA==}
     engines: {node: '>=4'}
@@ -890,6 +895,9 @@ packages:
 
   devalue@5.8.1:
     resolution: {integrity: sha512-4CXDYRBGqN+57wVJkuXBYmpAVUSg3L6JAQa/DFqm238G73E1wuyc/JhGQJzN7vUf/CMphYau2zXbfWzDR5aTEw==}
+
+  devalue@5.8.2:
+    resolution: {integrity: sha512-DObPPAfdtFbXjxLqK8s2Xk9ZuWz5+ZoFEhC7J76es4GU/rEiXwHTmbImoCdyoCOcBH1UF3+Cz6Z2sYD4hyl5TA==}
 
   duplexer@0.1.2:
     resolution: {integrity: sha512-jtD6YG370ZCIi/9GTaJKQxWTZD045+4R4hTk/x1UyoqadyJ9x9CgSi1RlVDQF8U2sxLLSnFkCaMihqljHIWgMg==}
@@ -1251,8 +1259,8 @@ packages:
     resolution: {integrity: sha512-BR7VvDCVHO+q2xBEWskxS6DJE1qRnb7DxzUrogb71CWoSficBxYsiAGd+Kl0mmq/MprG9yArRkyrQxTO6XjMzA==}
     hasBin: true
 
-  set-cookie-parser@3.1.0:
-    resolution: {integrity: sha512-kjnC1DXBHcxaOaOXBHBeRtltsDG2nUiUni+jP92M9gYdW12rsmx92UsfpH7o5tDRs7I1ZZPSQJQGv3UaRfCiuw==}
+  set-cookie-parser@3.1.2:
+    resolution: {integrity: sha512-5/r/lTwbJ3zQ+qwdUFZYeRNqda7P5HD8zQKqlSjdGt1/S0cjLAphHusj4Y58ahDtWn/g32xrIS58/ikOvwl0Lw==}
 
   shebang-command@2.0.0:
     resolution: {integrity: sha512-kHxr2zZpYtdmrN1qDjrrX/Z1rR1kG8Dx+gkpK1G4eXmvXswmcE1hTWBWYUzlraYw1/yZp6YuDY77YtvbN0dmDA==}
@@ -1931,32 +1939,32 @@ snapshots:
 
   '@standard-schema/spec@1.1.0': {}
 
-  '@sveltejs/acorn-typescript@1.0.10(acorn@8.16.0)':
+  '@sveltejs/acorn-typescript@1.0.11(acorn@8.18.0)':
     dependencies:
-      acorn: 8.16.0
+      acorn: 8.18.0
 
   '@sveltejs/acorn-typescript@1.0.9(acorn@8.16.0)':
     dependencies:
       acorn: 8.16.0
 
-  '@sveltejs/adapter-static@3.0.1(@sveltejs/kit@2.60.1(@sveltejs/vite-plugin-svelte@3.0.2(svelte@5.55.7)(vite@6.4.3(jiti@1.21.0)(stylus@0.63.0)))(svelte@5.55.7)(typescript@5.5.2)(vite@6.4.3(jiti@1.21.0)(stylus@0.63.0)))':
+  '@sveltejs/adapter-static@3.0.1(@sveltejs/kit@2.69.1(@sveltejs/vite-plugin-svelte@3.0.2(svelte@5.55.7)(vite@6.4.3(jiti@1.21.0)(stylus@0.63.0)))(svelte@5.55.7)(typescript@5.5.2)(vite@6.4.3(jiti@1.21.0)(stylus@0.63.0)))':
     dependencies:
-      '@sveltejs/kit': 2.60.1(@sveltejs/vite-plugin-svelte@3.0.2(svelte@5.55.7)(vite@6.4.3(jiti@1.21.0)(stylus@0.63.0)))(svelte@5.55.7)(typescript@5.5.2)(vite@6.4.3(jiti@1.21.0)(stylus@0.63.0))
+      '@sveltejs/kit': 2.69.1(@sveltejs/vite-plugin-svelte@3.0.2(svelte@5.55.7)(vite@6.4.3(jiti@1.21.0)(stylus@0.63.0)))(svelte@5.55.7)(typescript@5.5.2)(vite@6.4.3(jiti@1.21.0)(stylus@0.63.0))
 
-  '@sveltejs/kit@2.60.1(@sveltejs/vite-plugin-svelte@3.0.2(svelte@5.55.7)(vite@6.4.3(jiti@1.21.0)(stylus@0.63.0)))(svelte@5.55.7)(typescript@5.5.2)(vite@6.4.3(jiti@1.21.0)(stylus@0.63.0))':
+  '@sveltejs/kit@2.69.1(@sveltejs/vite-plugin-svelte@3.0.2(svelte@5.55.7)(vite@6.4.3(jiti@1.21.0)(stylus@0.63.0)))(svelte@5.55.7)(typescript@5.5.2)(vite@6.4.3(jiti@1.21.0)(stylus@0.63.0))':
     dependencies:
       '@standard-schema/spec': 1.1.0
-      '@sveltejs/acorn-typescript': 1.0.10(acorn@8.16.0)
+      '@sveltejs/acorn-typescript': 1.0.11(acorn@8.18.0)
       '@sveltejs/vite-plugin-svelte': 3.0.2(svelte@5.55.7)(vite@6.4.3(jiti@1.21.0)(stylus@0.63.0))
       '@types/cookie': 0.6.0
-      acorn: 8.16.0
+      acorn: 8.18.0
       cookie: 0.6.0
-      devalue: 5.8.1
+      devalue: 5.8.2
       esm-env: 1.2.2
       kleur: 4.1.5
       magic-string: 0.30.21
       mrmime: 2.0.1
-      set-cookie-parser: 3.1.0
+      set-cookie-parser: 3.1.2
       sirv: 3.0.2
       svelte: 5.55.7
       vite: 6.4.3(jiti@1.21.0)(stylus@0.63.0)
@@ -2151,6 +2159,8 @@ snapshots:
 
   acorn@8.16.0: {}
 
+  acorn@8.18.0: {}
+
   ansi-styles@3.2.1:
     dependencies:
       color-convert: 1.9.3
@@ -2256,6 +2266,8 @@ snapshots:
   detect-indent@6.1.0: {}
 
   devalue@5.8.1: {}
+
+  devalue@5.8.2: {}
 
   duplexer@0.1.2: {}
 
@@ -2471,7 +2483,7 @@ snapshots:
 
   mlly@1.6.1:
     dependencies:
-      acorn: 8.16.0
+      acorn: 8.18.0
       pathe: 1.1.2
       pkg-types: 1.0.3
       ufo: 1.5.3
@@ -2614,7 +2626,7 @@ snapshots:
 
   semver@6.3.1: {}
 
-  set-cookie-parser@3.1.0: {}
+  set-cookie-parser@3.1.2: {}
 
   shebang-command@2.0.0:
     dependencies:
